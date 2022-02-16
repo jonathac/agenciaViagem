@@ -91,7 +91,8 @@ text-align: center;
     border-radius: 20px;
     padding: 10px;
     background: rgb(255, 255, 255,0);
-    color: white;
+    color: #00b08b;
+    outline: 0;
 }
 
 .textfield > label{

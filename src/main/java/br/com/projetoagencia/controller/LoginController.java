@@ -11,41 +11,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.projetoagencia.dto.ClienteDTO;
 import br.com.projetoagencia.model.Cliente;
 import br.com.projetoagencia.repository.ClienteRepository;
-import br.com.projetoagencia.service.ClienteService;
 
 @Controller
 @RequestMapping("/")
-public class IndexController {
+public class LoginController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
-
-	@Autowired
-	private ClienteService clienteService;
-
-	private static ClienteDTO cliDTO;
-
-	@GetMapping()
-	public String getIndex() {
-		return "/index";
+	
+	@GetMapping("login")
+	public String getLogin(Model model) {
+		ClienteDTO cliDTO = new ClienteDTO();
+		model.addAttribute("clienteDTO", cliDTO);
+		return "/login";
 	}
 
-	public ClienteService getClienteService() {
-		return new ClienteService(this.clienteRepository);
-	}
+	@PostMapping("login")
+	public String login(ClienteDTO clienteDTO, ModelMap model) {
+		Cliente cli = clienteRepository.findByEmailAndSenha(clienteDTO.getEmail(), clienteDTO.getSenha());
 
-	@GetMapping("sair")
-	public String sair() {
-		cliDTO = null;
-		return "redirect:/ ";
-	}
+		if (cli == null) {
+			return "redirect:/?loginInvalido";
+		}
 
-	public static ClienteDTO getCliDTO() {
-		return cliDTO;
-	}
+		clienteDTO.setNome(cli.getNome());
+		IndexController.setCliDTO(clienteDTO);
+		//this.cliDTO = clienteDTO;
 
-	public static void setCliDTO(ClienteDTO cliDTO) {
-		IndexController.cliDTO = cliDTO;
+		return "redirect:/home";
 	}
-
+	
 }

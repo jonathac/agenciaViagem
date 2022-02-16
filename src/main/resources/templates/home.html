@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../static/css/style.css"
-	th:href="@{/css/style.css}">
+<link rel="stylesheet" href="../static/css/homeLogado.css"
+	th:href="@{/css/homeLogado.css}">
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
 	rel='stylesheet'>
 <title>Home</title>
@@ -17,10 +17,11 @@
 		<a href="#" id="question"> <i class="icon"> <box-icon
 					name='question-mark' color="#C6C5C5"></box-icon>
 		</i> Precisa de ajuda?
-		</a> <a href="/login" class="bottom-entre"> <i class="icon"> <box-icon
-					name='user' color="#fff"></box-icon>
-		</i>
-			<h2 class="name" th:text="${nomeCliente}"></h2>
+		</a>
+		<a href="/sair" class="bottom-entre">
+			<span class="icon"> <box-icon name='user' color="#fff"></box-icon>
+				<h2 class="name" th:text="${nomeCliente}"></h2>
+		</span>
 		</a> <a href="/" class="bottom-home"> <img id="logo"
 			th:src="@{/img/Icon.png}" alt="">
 		</a>

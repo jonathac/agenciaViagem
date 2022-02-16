@@ -36,6 +36,9 @@ public class Cliente {
 	@Column(name = "nr_senha")
 	private String senha;
 	
+	@Column(name = "nr_senhaconfirma")
+	private String senhaConfirma;
+
 	@Column(name = "ds_rua")
 	private String rua;
 	
@@ -55,7 +58,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(Long id, String nome, String cpf, String telefone, String email, String senha, String rua, String cidade, String estado, String numero, String cep) {
+	public Cliente(Long id, String nome, String cpf, String telefone, String email, String senha, String rua, String cidade, String estado, String numero, String cep, String senhaConfirma) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -68,6 +71,7 @@ public class Cliente {
 		this.estado = estado;
 		this.numero = numero;
 		this.cep = cep;
+		this.senhaConfirma = senhaConfirma;
 	}
 
 	public Long getId() {
@@ -156,5 +160,13 @@ public class Cliente {
 
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+
+	public String getSenhaConfirma() {
+		return senhaConfirma;
+	}
+
+	public void setSenhaConfirma(String senhaConfirma) {
+		this.senhaConfirma = senhaConfirma;
 	}
 }
