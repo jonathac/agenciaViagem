@@ -12,20 +12,25 @@ import br.com.projetoagencia.service.ClienteService;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class PacoteController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
 
 	@Autowired
 	private ClienteService clienteService;
+	
+	@GetMapping("pacote")
+	public String getPacote() {
+		return "/pacotes";
+	}
 
-	@GetMapping("home")
+	@GetMapping("pacoteLogado")
 	public String home(ModelMap model) {
 		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
 
 		model.addAttribute("nomeCliente", cliente.getNome());
-		return "/areaLogada/home";
+		return "/areaLogada/pacotesLogado";
 	}
 	
 }

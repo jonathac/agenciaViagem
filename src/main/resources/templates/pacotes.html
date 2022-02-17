@@ -9,7 +9,7 @@
 	th:href="@{/css/style.css}">
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
 	rel='stylesheet'>
-<title>Home</title>
+<title>Pacotes</title>
 </head>
 
 <body>
@@ -20,21 +20,19 @@
 		</a> <a href="/login" class="bottom-entre"> <i class="icon"> <box-icon
 					name='user' color="#fff"></box-icon>
 		</i> Entre ou cadastre-se
-		</a> <a href="/" class="bottom-home"> <img id="logo"
-			th:src="@{/img/Icon.png}" alt="">
-		</a>
+		</a> <img id="logo" src="./img/Icon.png" alt="">
 		<div class="navigation">
 			<ul>
-				<li class="list active"><a href="/"> <i class="icon"> <box-icon
-								name='bed' color="#00B08B"></box-icon>
+				<li class="list"><a href="/"> <i class="icon"> <box-icon
+								name='bed' color="#C6C5C5"></box-icon>
 					</i>Hospedagem
 				</a></li>
 				<li class="list"><a href="#"> <i class="icon"> <box-icon
 								name='plane-alt' type='solid' color="#C6C5C5"></box-icon>
 					</i> Passagens
 				</a></li>
-				<li class="list"><a href="/pacote"> <i class="icon"> <box-icon
-								name='package' color="#C6C5C5"></box-icon>
+				<li class="list active"><a href="/pacote"> <i class="icon">
+							<box-icon name='package' color="#00B08B"></box-icon>
 					</i>Pacotes
 				</a></li>
 				<li class="list"><a href="#"> <i class="icon"> <box-icon
@@ -57,31 +55,34 @@
 	<div class="principal">
 		<div class="buscar">
 			<ul>
-				<li class="busque"><a href="#">Todos</a></li>
-				<li class="busque"><a href="#">Hotéis</a></li>
-				<li class="busque"><a href="#">Aluguéis por temporada</a></li>
+				<li class="busque active"><a href="#">Voo + 2 Carro</a></li>
+				<li class="busque"><a href="#">Voo + Hospedagem</a></li>
 			</ul>
 			<div class="input">
-				<label>Para onde você vai? <input id="cidade" type="text"
-					placeholder="Insira uma cidade">
+				<label>Para onde você está saindo? <input id="cidade-1"
+					type="text" placeholder="Insira uma cidade">
+				</label> <i class="icon"><box-icon name='transfer' size="md"
+						color="#D81159"></box-icon></i> <label>Para onde você vai? <input
+					id="cidade-2" type="text" placeholder="Insira uma cidade">
 				</label> <label>Ida <input id="ida" type="date"
 					placeholder="Entrada">
 				</label> <label>Volta <input id="volta" type="date"
 					placeholder="Saída">
-				</label> <label>Quartos <input id="quartos" type="text">
+				</label> <label>Passageiros <input id="Passageiros" type="number"
+					placeholder="Total de passageiros">
 				</label> <a href="#" class="bottom"> Buscar </a>
 			</div>
 		</div>
 		<div class="lado-esquerdo">
-			<i class="icon"> <box-icon name='bed' color="#DD1830"></box-icon>
+			<i class="icon"> <box-icon name='briefcase-alt' color="#D81159"></box-icon>
 			</i>
-			<h1>Hospedagens em oferta</h1>
+			<h1>Pacotes imperdíveis</h1>
 			<div class="col-1">
 				<div class="image">
-					<img th:src="@{/img/unsplash_7F65HDP0-E0.png}" alt="">
+					<img th:src="@{/img/Dubai.png}" alt="">
 				</div>
 				<div class="info">
-					<h2>Rio de Janeiro</h2>
+					<h2>Dubai</h2>
 					<i class="icon"> <box-icon type='solid' name='badge-dollar'
 							color="#DD1830" size="lg"></box-icon>
 					</i>
@@ -100,10 +101,10 @@
 			</div>
 			<div class="col-1">
 				<div class="image">
-					<img th:src="@{/img/unsplash_Gisi_G8CXWI.png}" alt="">
+					<img th:src="@{/img/timesSquare.png}" alt="">
 				</div>
 				<div class="info">
-					<h2>Rio de Janeiro</h2>
+					<h2>Estados Unidos</h2>
 					<i class="icon"> <box-icon type='solid' name='badge-dollar'
 							color="#DD1830" size="lg"></box-icon>
 					</i>
@@ -122,10 +123,10 @@
 			</div>
 			<div class="col-1">
 				<div class="image">
-					<img th:src="@{/img/unsplash_tWuni4cYsXs (1).png}" alt="">
+					<img th:src="@{/img/Alemanha.png}" alt="">
 				</div>
 				<div class="info">
-					<h2>Rio de Janeiro</h2>
+					<h2>Alemanha</h2>
 					<i class="icon"> <box-icon type='solid' name='badge-dollar'
 							color="#DD1830" size="lg"></box-icon>
 					</i>
@@ -160,77 +161,75 @@
 			</div>
 
 			<div class="acomodacao">
-				<h1>Pesquise por tipos de acomodação</h1>
+				<h1>Destinos mais buscados</h1>
 				<div class="item">
-					<div class="col-info" id="item-1">
-						<h1>Hotéis</h1>
+					<div class="col-info" id="item-1-pacotes">
+						<h1>Barcelona</h1>
 					</div>
-					<div class="col-info" id="item-2">
-						<h1>Resorts</h1>
+					<div class="col-info" id="item-2-pacotes">
+						<h1>Paris</h1>
 					</div>
-					<div class="col-info" id="item-3">
-						<h1>Hotéis</h1>
+					<div class="col-info" id="item-3-pacotes">
+						<h1>Rio de Janeiro</h1>
 					</div>
-					<div class="col-info" id="item-4">
-						<h1>Resorts</h1>
+					<div class="col-info" id="item-4-pacotes">
+						<h1>Berlim</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<footer id="rodape">
-        <h1>Travel
-            <a href="#" class="icon"><box-icon name='gmail' type='logo' size="md" color="#fff"></box-icon></a>
-            <a href="#" class="icon"><box-icon name='instagram' type='logo' size="md" color="#fff"></box-icon></a>
-            <a href="#" class="icon"><box-icon name='twitter' type='logo' size="md" color="#fff"></box-icon></a>
-            <a href="#" class="icon"><box-icon name='facebook-square' type='logo' size="md" color="#fff" ></box-icon></a>
-        </h1>
-        
-        <div class="footer-col" id="left">
-            <h2>Fique por dentro das novidades</h2>
-            <label>Inscreva-se para receber noticias
-                <input type="email" placeholder="Digite seu e-mail">
-            </label>
-            <a href="#">
-                Inscrever
-            </a>
-        </div>
-        <div class="footer-col" id="center">
-            <h2>Formas de contato</h2>
-            <h4>(11)99999-9999</h4>
-            <h4>(48)99999-9999</h4>
-            <h4>travel@travel.com</h4>
-        </div>
-        <div class="footer-col" id="right">
-            <h2>Está procurando por:</h2>
-           <div class="list" id="left-list">
-            <ul class="list-unstyled">
-                <li><a href="#" class="secondary-color">Viagens Internacionais</a></li>
-                <li><a href="#" class="secondary-color">Cruzeiros</a></li>
-                <li><a href="#" class="secondary-color">Viagens Nacionais</a></li>
-                <li><a href="#" class="secondary-color">Hotéis</a></li>
-            </ul>
-           </div>
-           <div class="list" id="right-list">
-            <ul class="list-unstyled">
-                <li><a href="#" class="secondary-color">Contato</a></li>
-                <li><a href="#" class="secondary-color">Ajuda</a></li>
-                <li><a href="#" class="secondary-color">Sobre nós</a></li>
-                <li><a href="#" class="secondary-color">Regulamentos</a></li>
-            </ul>
-           </div>
-        </div>
-        <div class="fim-footer">
-            <span>
-                Travel©2022
-            </span>
-            <span id="heart">
-                Viaje conosco!<box-icon type='solid' name='heart-circle' color="#fff"></box-icon>
-            </span>
-        </div>
-    </footer>
-	 <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
-    <script>
+		<h1>
+			Travel <a href="#" class="icon"><box-icon name='gmail'
+					type='logo' size="md" color="#fff"></box-icon></a> <a href="#"
+				class="icon"><box-icon name='instagram' type='logo' size="md"
+					color="#fff"></box-icon></a> <a href="#" class="icon"><box-icon
+					name='twitter' type='logo' size="md" color="#fff"></box-icon></a> <a
+				href="#" class="icon"><box-icon name='facebook-square'
+					type='logo' size="md" color="#fff"></box-icon></a>
+		</h1>
+
+		<div class="footer-col" id="left">
+			<h2>Fique por dentro das novidades</h2>
+			<label>Inscreva-se para receber noticias <input type="email"
+				placeholder="Digite seu e-mail">
+			</label> <a href="#"> Inscrever </a>
+		</div>
+		<div class="footer-col" id="center">
+			<h2>Formas de contato</h2>
+			<h4>(11)99999-9999</h4>
+			<h4>(48)99999-9999</h4>
+			<h4>travel@travel.com</h4>
+		</div>
+		<div class="footer-col" id="right">
+			<h2>Está procurando por:</h2>
+			<div class="list" id="left-list">
+				<ul class="list-unstyled">
+					<li><a href="#" class="secondary-color">Viagens
+							Internacionais</a></li>
+					<li><a href="#" class="secondary-color">Cruzeiros</a></li>
+					<li><a href="#" class="secondary-color">Viagens Nacionais</a></li>
+					<li><a href="#" class="secondary-color">Hotéis</a></li>
+				</ul>
+			</div>
+			<div class="list" id="right-list">
+				<ul class="list-unstyled">
+					<li><a href="#" class="secondary-color">Contato</a></li>
+					<li><a href="#" class="secondary-color">Ajuda</a></li>
+					<li><a href="#" class="secondary-color">Sobre nós</a></li>
+					<li><a href="#" class="secondary-color">Regulamentos</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fim-footer">
+			<span> Travel©2022 </span> <span id="heart"> Viaje conosco!<box-icon
+					type='solid' name='heart-circle' color="#fff"></box-icon>
+			</span>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+	<script>
         const list = document.querySelectorAll('.list');
 
         function activeLink() {
@@ -241,7 +240,7 @@
         list.forEach((item) =>
             item.addEventListener('click', activeLink));
     </script>
-    <script>
+	<script>
         const lista = document.querySelectorAll('.busque');
 
         function activeLink() {
@@ -252,7 +251,7 @@
         lista.forEach((item) =>
             item.addEventListener('click', activeLink));
     </script>
-    <script>
+	<script>
         document.querySelector(".item")
         .addEventListener("wheel", event => {
             if(event.deltaY > 0){

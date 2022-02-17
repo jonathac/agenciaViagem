@@ -32,13 +32,13 @@ public class CadastroController {
 
 	@PostMapping("cadastrar")
 	public String postCadastro(Cliente cliente) {
-		if(cliente.getSenha().equals(cliente.getSenhaConfirma())){
+		if(this.validaCadastro(cliente)){
 			ClienteService clienteSer = this.getClienteService();
 			//clienteService = getClienteService();
 			clienteSer.create(cliente);
 			return "redirect:/login";
 		} else {
-			return "redirect:/cadastro?senhainvalida";
+			return "redirect:/cadastro?cadastroinvalido";
 		}
 		
 	}
@@ -46,5 +46,38 @@ public class CadastroController {
 	public ClienteService getClienteService() {
 		return new ClienteService(this.clienteRepository);
 	}
-	
+
+	//valida informações do cadastro
+	public boolean validaCadastro(Cliente cliente) {
+		//valida campo vaizo ou nulo
+		if(cliente.getNome().isEmpty() || cliente.getNome() == null)
+			return false;
+		if(cliente.getCpf().isEmpty() || cliente.getCpf() == null)
+			return false;
+		if(cliente.getTelefone().isEmpty() || cliente.getTelefone() == null)
+			return false;
+		if(cliente.getEmail().isEmpty() || cliente.getEmail() == null)
+			return false;
+		if(cliente.getSenha().isEmpty() || cliente.getSenha() == null)
+			return false;
+		if(cliente.getRua().isEmpty() || cliente.getRua() == null)
+			return false;
+		if(cliente.getCidade().isEmpty() || cliente.getCidade() == null)
+			return false;
+		if(cliente.getEstado().isEmpty() || cliente.getEstado() == null)
+			return false;
+		if(cliente.getNumero().isEmpty() || cliente.getNumero() == null)
+			return false;
+		if(cliente.getCep().isEmpty() || cliente.getCep() == null)
+			return false;
+		
+		if(cliente.getSenha().equals(cliente.getSenhaConfirma())) {
+			if(cliente.getCpf().matches("[0-9]*")) {
+				if(!cliente.getNome().matches("[0-9]*")) {
+					return true;
+				}
+			}
+		} 
+		return false;
+	}
 }
