@@ -12,7 +12,7 @@ import br.com.projetoagencia.service.ClienteService;
 
 @Controller
 @RequestMapping("/")
-public class PacoteController {
+public class PassagemController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
@@ -20,30 +20,17 @@ public class PacoteController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	@GetMapping("pacote")
-	public String getPacote() {
-		return "/pacotes";
+	@GetMapping("passagem")
+	public String getPassagem() {
+		return "/passagens";
 	}
 	
-	@GetMapping("pacoteMadrid")
-	public String getPacoteMatrid() {
-		return "/pacotes-2";
-	}
-	
-	@GetMapping("pacoteLogado")
+	@GetMapping("passagemLogado")
 	public String home(ModelMap model) {
 		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
 
 		model.addAttribute("nomeCliente", cliente.getNome());
-		return "/areaLogada/pacotesLogado";
-	}
-	
-	@GetMapping("pacoteLogadoMadrid")
-	public String getPacoteLogadoMatrid(ModelMap model) {
-		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
-
-		model.addAttribute("nomeCliente", cliente.getNome());
-		return "/areaLogada/pacotes-2";
+		return "/areaLogada/passagensLogado";
 	}
 	
 }

@@ -38,7 +38,8 @@ public class CadastroController {
 			clienteSer.create(cliente);
 			return "redirect:/login";
 		} else {
-			return "redirect:/cadastro?cadastroinvalido";
+			return "redirect:/cadastro#bg";
+			
 		}
 		
 	}
@@ -79,5 +80,10 @@ public class CadastroController {
 			}
 		} 
 		return false;
+	}
+	
+	@GetMapping("teste")
+	public String getteste() {
+		return "/teste";
 	}
 }

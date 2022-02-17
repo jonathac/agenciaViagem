@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Home</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="#" id="question">
+            <i class="icon">
+                <box-icon name='question-mark' color="#C6C5C5"></box-icon>
+            </i> Precisa de ajuda?
+        </a>
+        <a href="/login" class="bottom-entre">
+		<span class="icon">
+			<box-icon name='user' color="#fff"></box-icon>
+			<span id="entrecad">Entre ou cadastre-se </span>
+		</span>
+		
+		</a> <a href="/" class="bottom-home"> <img id="logo"
+			th:src="@{/img/Icon.png}" alt="">
+		</a>
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="/">
+                        <i class="icon">
+                            <box-icon name='bed' color="#C6C5C5"></box-icon>
+                        </i>Hospedagem
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="/passagens">
+                        <i class="icon">
+                            <box-icon name='plane-alt' type='solid' color="#00B08B"></box-icon>
+                        </i> Passagens
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="/pacote">
+                        <i class="icon">
+                            <box-icon name='package' color="#C6C5C5"></box-icon>
+                        </i>Pacotes
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class="icon">
+                            <box-icon name='ship' type='solid' color="#C6C5C5"></box-icon>
+                        </i>Cruzeiro
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class="icon">
+                            <box-icon name='car' color="#C6C5C5"></box-icon>
+                        </i>Carros
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <i class="icon"><img
+							th:src="@{/img/icons8-animação-24.png}" alt=""></i>Disney
+                    </a>
+                </li>
+                <li class="list">
+                    <a id="oferta" href="#">
+                        <i class="icon">
+                            <box-icon type='solid' name='badge-dollar' color="#DD1830"></box-icon>
+                        </i>Ofertas
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="principal">
+        <div class="buscar">
+            <ul>
+                <li class="busque active">
+                    <a href="#">Voo + 2 Carro</a>
+                </li>
+                <li class="busque">
+                    <a href="#">Voo + Hospedagem</a> 
+                </li>
+            </ul>
+            <div class="input">
+                <label>Para onde você está saindo?
+                    <input id="cidade-1" type="text" placeholder="Insira uma cidade">
+                </label>
+                <i class="icon"><box-icon name='transfer' size="md" color="#D81159"></box-icon></i>
+                <label>Para onde você vai?
+                    <input id="cidade-2" type="text" placeholder="Insira uma cidade">
+                </label>
+                <label>Ida
+                    <input id="ida" type="date" placeholder="Entrada">
+                </label>
+                <label>Volta
+                    <input id="volta" type="date" placeholder="Saída">
+                </label>
+                <label>Passageiros
+                    <input id="Passageiros" type="number" placeholder="Total de passageiros">
+                </label>
+                <a href="#" class="bottom">
+                    Buscar
+                </a>
+            </div>
+        </div>
+        <div class="lado-esquerdo">
+            <i class="icon">
+                <box-icon name='plane-alt' type='solid' color="#DD1830"></box-icon>
+            </i>
+            <h1>Passagens aéreas em oferta</h1>
+            <div class="col-1">
+                <div class="image">
+                    <img th:src="@{/img/California.png}" alt="">
+                </div>
+                <div class="info">
+                    <h2>California</h2>
+                    <i class="icon">
+                        <box-icon type='solid' name='badge-dollar' color="#DD1830" size="lg"></box-icon>
+                    </i>
+                    <h5>
+                        <box-icon class="calendar" name='calendar' color="#757575"></box-icon>4 noites
+                    </h5>
+                    <h2 class="pacote">Pacotes a partir de</h2>
+                    <h4 class="preco">R$</h4>
+                    <h1 class="valor">2500<s>R$3000</s>
+                        <a class="arow" href="#">
+                            <box-icon name='right-arrow-circle' type='solid' color="#00B08B" size="md"></box-icon>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="image">
+                    <img th:src="@{/img/Grecia.png}" alt="">
+                </div>
+                <div class="info">
+                    <h2>Grecia</h2>
+                    <i class="icon">
+                        <box-icon type='solid' name='badge-dollar' color="#DD1830" size="lg"></box-icon>
+                    </i>
+                    <h5>
+                        <box-icon class="calendar" name='calendar' color="#757575"></box-icon>4 noites
+                    </h5>
+                    <h2 class="pacote">Pacotes a partir de</h2>
+                    <h4 class="preco">R$</h4>
+                    <h1 class="valor">3500<s>R$4500</s>
+                        <a class="arow" href="pacotes-2.html">
+                            <box-icon name='right-arrow-circle' type='solid' color="#00B08B" size="md"></box-icon>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="image">
+                    <img th:src="@{/img/Veneza.png}" alt="">
+                </div>
+                <div class="info">
+                    <h2>Veneza</h2>
+                    <i class="icon">
+                        <box-icon type='solid' name='badge-dollar' color="#DD1830" size="lg"></box-icon>
+                    </i>
+                    <h5>
+                        <box-icon class="calendar" name='calendar' color="#757575"></box-icon>4 noites
+                    </h5>
+                    <h2 class="pacote">Pacotes a partir de</h2>
+                    <h4 class="preco">R$</h4>
+                    <h1 class="valor">1209<s>R$2000</s>
+                        <a class="arow" href="#">
+                            <box-icon name='right-arrow-circle' type='solid' color="#00B08B" size="md"></box-icon>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="lado-direito">
+            <div class="col-InfoCovid">
+                <h1>
+                    <box-icon id="virus" name='virus-block' type='solid' size="md" color='#C6C5C5'></box-icon>Informação
+                    sobre a COVID-19
+                </h1>
+                <h4>Em nossa central de informações você vai encontrar tudo o que é preciso para viajar, remarcar seu
+                    voo, documentação e mais.
+                </h4>
+                <a href="#" class="requisitos">
+                    <box-icon name='notepad' color='#C6C5C5'></box-icon>
+                    <span>Requisitos para sua viagem</span>
+                    <box-icon id="chevron-right" name='chevron-right' size="md" color="#00B08B"></box-icon>
+                </a>
+            </div>
+
+            <div class="acomodacao">
+                <h1>Pesquise por tipo de classe</h1>
+                <div class="item">
+                    <div class="col-info" id="item-1-passagem">
+                        <h1>Primeira Classe</h1>
+                    </div>
+                    <div class="col-info" id="item-2-passagem">
+                        <h1>Executiva</h1>
+                    </div>
+                    <div class="col-info" id="item-3-passagem">
+                        <h1>Econômica</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="rodape">
+        <h1>Travel
+            <a href="#" class="icon"><box-icon name='gmail' type='logo' size="md" color="#fff"></box-icon></a>
+            <a href="#" class="icon"><box-icon name='instagram' type='logo' size="md" color="#fff"></box-icon></a>
+            <a href="#" class="icon"><box-icon name='twitter' type='logo' size="md" color="#fff"></box-icon></a>
+            <a href="#" class="icon"><box-icon name='facebook-square' type='logo' size="md" color="#fff" ></box-icon></a>
+        </h1>
+        
+        <div class="footer-col" id="left">
+            <h2>Fique por dentro das novidades</h2>
+            <label>Inscreva-se para receber noticias
+                <input type="email" placeholder="Digite seu e-mail">
+            </label>
+            <a href="#">
+                Inscrever
+            </a>
+        </div>
+        <div class="footer-col" id="center">
+            <h2>Formas de contato</h2>
+            <h4>(11)99999-9999</h4>
+            <h4>(48)99999-9999</h4>
+            <h4>travel@travel.com</h4>
+        </div>
+        <div class="footer-col" id="right">
+            <h2>Está procurando por:</h2>
+           <div class="list" id="left-list">
+            <ul class="list-unstyled">
+                <li><a href="#" class="secondary-color">Viagens Internacionais</a></li>
+                <li><a href="#" class="secondary-color">Cruzeiros</a></li>
+                <li><a href="#" class="secondary-color">Viagens Nacionais</a></li>
+                <li><a href="#" class="secondary-color">Hotéis</a></li>
+            </ul>
+           </div>
+           <div class="list" id="right-list">
+            <ul class="list-unstyled">
+                <li><a href="#" class="secondary-color">Contato</a></li>
+                <li><a href="#" class="secondary-color">Ajuda</a></li>
+                <li><a href="#" class="secondary-color">Sobre nós</a></li>
+                <li><a href="#" class="secondary-color">Regulamentos</a></li>
+            </ul>
+           </div>
+        </div>
+        <div class="fim-footer">
+            <span>
+                Travel©2022
+            </span>
+            <span id="heart">
+                Viaje conosco!<box-icon type='solid' name='heart-circle' color="#fff"></box-icon>
+            </span>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <script>
+        const list = document.querySelectorAll('.list');
+
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+    <script>
+        const lista = document.querySelectorAll('.busque');
+
+        function activeLink() {
+            lista.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        lista.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+    <script>
+        document.querySelector(".item")
+        .addEventListener("wheel", event => {
+            if(event.deltaY > 0){
+                event.target.scrollBy(300, 0)
+            } else {
+                event.target.scrollBy(-300, 0)
+            }
+        })
+    </script>
+</body>
+
+</html> 

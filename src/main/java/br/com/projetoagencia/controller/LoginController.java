@@ -31,7 +31,7 @@ public class LoginController {
 		Cliente cli = clienteRepository.findByEmailAndSenha(clienteDTO.getEmail(), clienteDTO.getSenha());
 
 		if (cli == null) {
-			return "redirect:/?loginInvalido";
+			return "redirect:/login#bg";
 		}
 
 		clienteDTO.setNome(cli.getNome());
