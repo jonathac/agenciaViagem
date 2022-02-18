@@ -27,7 +27,17 @@ public class PacoteController {
 	
 	@GetMapping("pacoteMadrid")
 	public String getPacoteMatrid() {
-		return "/pacotes-2";
+		return "/pacotesMadrid";
+	}
+	
+	@GetMapping("pacoteDubai")
+	public String getPacoteDubai() {
+		return "/pacotesDubai";
+	}
+	
+	@GetMapping("pacoteAlemanha")
+	public String getPacoteAlemanha() {
+		return "/pacotesAlemanha";
 	}
 	
 	@GetMapping("pacoteLogado")
@@ -43,7 +53,23 @@ public class PacoteController {
 		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
 
 		model.addAttribute("nomeCliente", cliente.getNome());
-		return "/areaLogada/pacotes-2";
+		return "/areaLogada/pacotesMadrid";
+	}
+
+	@GetMapping("pacoteLogadoDubai")
+	public String getPacoteLogadoDubai(ModelMap model) {
+		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
+
+		model.addAttribute("nomeCliente", cliente.getNome());
+		return "/areaLogada/pacotesDubai";
+	}
+	
+	@GetMapping("pacoteLogadoAlemanha")
+	public String getPacoteLogadoAlemanha(ModelMap model) {
+		Cliente cliente = clienteRepository.findByNome(IndexController.getCliDTO().getNome());
+
+		model.addAttribute("nomeCliente", cliente.getNome());
+		return "/areaLogada/pacotesAlemanha";
 	}
 	
 }
